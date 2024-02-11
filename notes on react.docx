@@ -42,3 +42,8 @@ State variable - it is a super powerful variable
 
  eg for state variable : const [listofRes,setlistofRes] = useState([]);
 setlistofRes is function to update listofRes state variable
+
+
+-- Episode 6
+  Monolith Architecture: Where each server will have their independent server.
+  
