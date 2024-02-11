@@ -1,44 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-// // React.createElement => object => HTMLElement(render)
-
-// const heading = React.createElement("h1",{id:"heading"},"It is the heading");
-
-// // JSX in  React 
-// //JSX is not HTML, it is HTML - like syntax
-
-// const jsxheading = <h1>It is heading using JSX</h1>
-
-// //React component
-// //class based component - OLD
-// // Functional component - NEW( It is a function of javascript)
-// const HeadingComponent =() =>{
-//     return <h1>Heading Component</h1>
-// }
-// //or
-// const HeadingComponent2 =() => <h1>Component 2</h1>
-const Header = () =>{
-    return(
-        <div className="header">
-            <div className="logo-container">
-                <img className="logo" src="https://dynamic.brandcrowd.com/asset/logo/5c6cee11-6c92-402c-bda4-e2c11ec15db3/logo-search-grid-1x?logoTemplateVersion=2&v=638336429437900000&text=Gujju%27s+Food"></img>
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About us</li>
-                    <li>Contact us</li>
-                    <li>cart</li>
-                </ul>
-            </div>
-        </div>
-    )
-}
-
-// swiggy images link https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/
-  
-  const resList = [
+const resList = [
     {
       type: "restaurant",
       data: {
@@ -1921,43 +1881,6 @@ const Header = () =>{
       },
       subtype: "basic",
     },
-  ];
+];
 
-
-const FoodCard =(props) =>{
-  const {resData}= props;
-  const{cloudinaryImageId, name, cuisines, avgRating, deliveryTime} = resData?.data
-    return(
-        <div className="foodCard">
-            <img src={
-              "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
-              +cloudinaryImageId
-             }/>
-            <h2>{name}</h2>
-            <h4>{cuisines.join(", ")}</h4>
-            <h4>{avgRating} stars</h4>
-            <h5>{deliveryTime} minutes</h5>
-        </div>
-    )
-}
-const Body = () =>{
-    return(
-        <div className="body">
-            {
-              resList.map(restaurnart => <FoodCard key = {restaurnart.data.id}resData ={restaurnart}/>)
-            }
-        </div>
-    )
-}
-const AppLayout=()=>{
-    return(
-        <div className="layout">
-            <Header/>
-            <Body />
-        </div>
-        //body
-        //footer
-    )
-}
-const root =ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export default resList;

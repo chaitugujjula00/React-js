@@ -1,0 +1,44 @@
+  React.createElement => object => HTMLElement(render)
+
+ const heading = React.createElement("h1",{id:"heading"},"It is the heading");
+
+  JSX in  React 
+ JSX is not HTML, it is HTML - like syntax
+
+ const jsxheading = <h1>It is heading using JSX</h1>
+
+ React component
+ class based component - OLD
+  Functional component - NEW( It is a function of javascript)
+ const HeadingComponent =() =>{
+     return <h1>Heading Component</h1>
+ }
+ or
+ const HeadingComponent2 =() => <h1>Component 2</h1>
+
+
+ for adding a component from one file to other file
+ => use export in inital file and import in using file.
+
+
+ Two types of export 
+ 1) (Default import)
+ export default component;
+  import component
+  first type don't have {} in import
+ 2) (Named import)
+ export const component1;
+  export const component2; 
+    import {component1/component2}
+    need to use {} for import in this type of export
+
+Can we use default import and named import combined?
+ans : Yes we can use both in a single folder.
+
+State variable - it is a super powerful variable
+# react hook - normal JS utility functions
+ - useState() -  super powerful variables in React
+ - useEffect()
+
+ eg for state variable : const [listofRes,setlistofRes] = useState([]);
+setlistofRes is function to update listofRes state variable
