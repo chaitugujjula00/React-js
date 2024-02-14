@@ -46,4 +46,21 @@ setlistofRes is function to update listofRes state variable
 
 -- Episode 6
   Monolith Architecture: Where each server will have their independent server.
-  
+
+  # episode 7 rendering 
+
+  Need to install react-router-dom
+  import { createBrowserRouter, RouterProvider} from "react-router-dom";
+  // these are components of routing pages
+  const appRouter = createBrowserRouter([
+    {
+        path:'/',
+        element:<AppLayout/>
+    },
+    {
+        path:'/about',
+        element:<About/>
+    },
+]);
+const root =ReactDOM.createRoot(document.getElementById("root"));
+root.render(<RouterProvider router={appRouter}/>); => appRouter is acting as a router with an array of different paths.
