@@ -64,3 +64,12 @@ setlistofRes is function to update listofRes state variable
 ]);
 const root =ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter}/>); => appRouter is acting as a router with an array of different paths.
+
+
+//chunking
+//code splitting
+//Dynamic Bundling
+// Lazy loading : Only loads the showing content but the whole content.
+//on demand loading
+import like const name =lazy(()=>import(file location));
+<suspence fallback={component}> component</suspence>
