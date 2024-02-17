@@ -36,25 +36,25 @@ const Body = () =>{
         }
     return(
         <div className="body">
-            <div className="filter">
-                <div className="search-container">
-                    <input type="text" className="search-box" value={searchText} onChange={(e)=>{
+            <div className="m-4 flex items-center">
+                <div className="m-4 flex ">
+                    <input type="text" className="m-4 p-2 border border-solid border-black rounded-lg" value={searchText} onChange={(e)=>{
                         setsearchText(e.target.value);
                     }}/>
-                    <button className="search-btn" onClick={()=>{
+                    <button className="px-4 m-4 bg-green-300 border border-solid border-black rounded-lg" onClick={()=>{
                         const searchedList = listofrestaurants.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                         setfilteredrestaurants(searchedList);
                     }}> Search</button>
                 </div>
-                <button className="filter-btn" onClick={()=>{
+                <button className="px-4 py-2 bg-green-300 border border-solid border-black rounded-lg" onClick={()=>{
                     const filteredList = listofrestaurants.filter((res)=>res.info.avgRating>4);
                     setfilteredrestaurants(filteredList);
                 }}
                 >Top rated restaurants</button>
             </div>
-            <div className="restaurants_container">
+            <div className="mx-[10%] flex flex-wrap justify-between">
                 {
-                filteredrestaurants.map(restaurnart => <Link className="foodCard" key = {restaurnart.info.id} to={'/restuarants/'+restaurnart.info.id}><FoodCard  resData ={restaurnart}/></Link>)
+                filteredrestaurants.map(restaurnart => <Link className="m-4 w-[20%] rounded-xl bg-pink-100 hover:shadow-xl hover:bg-red-200" key = {restaurnart.info.id} to={'/restuarants/'+restaurnart.info.id}><FoodCard  resData ={restaurnart}/></Link>)
                 }
             </div>
         </div>
