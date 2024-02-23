@@ -148,3 +148,6 @@ import like const name =lazy(()=>import(file location));
     padding:10px;
     margin: 10px;
 } */
+
+
+Create context using createContext and use it using useContext

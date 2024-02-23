@@ -4,7 +4,7 @@ const FoodCard = (props) =>{
     const{cloudinaryImageId, name, cuisines, avgRating, sla} = resData?.info
       return(
           <div className="FoodCard">
-              <img className="rounded-se-xl rounded-ss-xl" src={
+              <img className="rounded-se-xl rounded-ss-xl bg-cover w-full h-40" src={
                 CDN_URL
                 +cloudinaryImageId
                }/>
@@ -17,4 +17,16 @@ const FoodCard = (props) =>{
           </div>
       )
   };
+
+  //higher order component
+  export const withPromotedlabel =(FoodCard) =>{
+        return(props)=>{
+                return(
+                        <div>
+                                <label className="absolute y-0 ml-3 text-white bg-gray-500 p-2 rounded-b-xl">Open</label>
+                                <FoodCard {...props}/>
+                        </div>
+                )
+        }
+  }
 export default FoodCard;  

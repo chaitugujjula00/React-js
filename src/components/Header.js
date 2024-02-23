@@ -1,10 +1,13 @@
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "./useOnlineStatus";
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
 const Header = () => {
   const onlineStatus = useOnlineStatus();
+  const data = useContext(UserContext);
   return (
-    <div className="flex justify-between bg-pink-100 shadow-xl">
+    <div className="flex justify-between bg-pink-100 shadow-lg">
       <div className="logo-container">
         <img className="w-52" src={LOGO_URL}></img>
       </div>
