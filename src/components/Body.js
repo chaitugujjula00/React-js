@@ -55,7 +55,9 @@ const Body = () =>{
             </div>
             <div className="mx-[10%] flex flex-wrap justify-between">
                 {
-                filteredrestaurants.map(restaurnart => <Link className="m-4 w-[20%] rounded-xl bg-pink-100 hover:shadow-xl hover:bg-red-200" key = {restaurnart.info.id} to={'/restuarants/'+restaurnart.info.id}>
+                filteredrestaurants.map(restaurnart => 
+                <Link className="m-4 w-[20%] rounded-xl bg-pink-100 hover:shadow-xl hover:bg-red-200" 
+                key = {restaurnart.info.id} to={'/restuarants/'+restaurnart.info.id}>
                         {restaurnart.info.isOpen ? (<RestaurantCardPromoted resData={restaurnart} />):
                         (<div>
                                 <label className="absolute y-0 ml-3 text-white bg-red-500 p-2 rounded-b-xl">Closed</label>

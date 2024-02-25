@@ -151,3 +151,11 @@ import like const name =lazy(()=>import(file location));
 
 
 Create context using createContext and use it using useContext
+-- Redox is not compulsory
+# Redux Toolkit
+- Install @reduxjs/toolkit and react-redux
+- Build our store
+- Connect our store to our app 
+-Slice (cartSlice)
+-dispatch(action)
+-Selector

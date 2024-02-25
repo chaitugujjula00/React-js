@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "./useOnlineStatus";
 import { useContext } from "react";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 const Header = () => {
   const onlineStatus = useOnlineStatus();
   const data = useContext(UserContext);
+// Subscribing to the store using a selector
+  const cartItems = useSelector((store) => store.cart.items);
+
   return (
     <div className="flex justify-between bg-pink-100 shadow-lg">
       <div className="logo-container">
@@ -24,7 +28,7 @@ const Header = () => {
             <Link to="/contact">Contact us</Link>
           </li>
           <li className="m-4 hover:cursor-pointer">
-            <Link to="/cart">cart</Link>
+            <Link to="/cart">cart({cartItems.length} items)</Link>
           </li>
         </ul>
       </div>

@@ -9,8 +9,8 @@ const RestaurantCategory= ({data, showItems,showIndex,setshowIndex}) =>{
                 showItems==false ? setshowIndex(showIndex) : setshowIndex(null);
         }
         return(
-                <div className="my-8 p-3 border-1 rounded-lg bg-gray-300 drop-shadow-xl" onClick={handleClick}>
-                        <div className=" flex justify-between cursor-pointer" >
+                <div className="my-8 p-3 border-1 rounded-lg bg-gray-300 drop-shadow-xl" >
+                        <div className=" flex justify-between cursor-pointer" onClick={handleClick}>
                                 <span className="text-xl font-semibold ">{data?.title} ({data.itemCards.length})</span>
                         <span className="text-lg font-semibold">⏬</span>
                         </div>
