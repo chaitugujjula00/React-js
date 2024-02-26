@@ -159,3 +159,10 @@ Create context using createContext and use it using useContext
 -Slice (cartSlice)
 -dispatch(action)
 -Selector
+
+
+# Types of testing(devloper)
+- Unit testing
+- Integration testing
+- End to End testing (E to E testing)
+ 
