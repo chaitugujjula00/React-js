@@ -15,9 +15,9 @@ const RestuarantMenu = () => {
     const data = await fetch(MENU_URL+resId+'&catalog_qa=undefined&submitAction=ENTER');
     const json = await data.json();
         // console.log(json);
-    setrestaurantInfo(json?.data?.cards[2]?.card?.card?.info);
+    setrestaurantInfo(json?.data?.cards[0]?.card?.card?.info);
     setcatergoriesInfo(
-        json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+        json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
                 (c)=>c.card?.card?.["@type"]=="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
           )
     );
@@ -27,6 +27,7 @@ const RestuarantMenu = () => {
 //   console.log(categories);
   };
 //     console.log(catergoriesInfo);
+console.log(restaurantInfo);
   const { name, locality, costForTwoMessage, avgRating } = restaurantInfo;
   return (
     <div className="text-center mx-60">

@@ -10,8 +10,8 @@ const Cart = () =>{
                 dispatch(clearCart());
         }
         return(
-                <div className="my-8 p-3 border-1 rounded-lg bg-gray-300 drop-shadow-xl" >
-                        <button onClick={handleClearCart}>Clear Cart</button>
+                <div className="my-8 p-3 border-1 rounded-lg bg-gray-300 drop-shadow-xl mx-auto w-[65%]" >
+                        <button className="bg-white rounded-3xl py-2 px-4" onClick={handleClearCart}>Clear Cart</button>
                         <ItemList items={items} />
                 </div>
         )

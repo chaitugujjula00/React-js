@@ -47,16 +47,21 @@ const Body = () =>{
                         setfilteredrestaurants(searchedList);
                     }}> Search</button>
                 </div>
-                <button className="px-4 py-2 bg-green-300 border border-solid border-black rounded-lg" onClick={()=>{
+                <button className="px-4 py-2 m-4 bg-green-300 border border-solid border-black rounded-lg" onClick={()=>{
                     const filteredList = listofrestaurants.filter((res)=>res.info.avgRating>4);
                     setfilteredrestaurants(filteredList);
                 }}
                 >Top rated restaurants</button>
+                <button className="px-4 py-2 m-4 bg-green-300 border border-solid border-black rounded-lg" onClick={()=>{
+                    const filteredList = listofrestaurants.filter((res)=>res.info.sla.deliveryTime<30);
+                    setfilteredrestaurants(filteredList);
+                }}
+                >Delivery less than 30 mins</button>
             </div>
-            <div className="mx-[10%] flex flex-wrap justify-between">
+            <div className="mx-[10%] flex flex-wrap justify-left">
                 {
                 filteredrestaurants.map(restaurnart => 
-                <Link className="m-4 w-[20%] rounded-xl bg-pink-100 hover:shadow-xl hover:bg-red-200" 
+                <Link className="my-4 mx-7 w-[20%] rounded-xl bg-pink-100 hover:shadow-xl hover:bg-red-200" 
                 key = {restaurnart.info.id} to={'/restuarants/'+restaurnart.info.id}>
                         {restaurnart.info.isOpen ? (<RestaurantCardPromoted resData={restaurnart} />):
                         (<div>
