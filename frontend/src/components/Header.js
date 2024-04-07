@@ -30,6 +30,9 @@ const Header = () => {
           <li className="m-4 hover:cursor-pointer">
             <Link to="/cart">cart({cartItems.length} items)</Link>
           </li>
+          <li className="m-4 hover:cursor-pointer">
+            <Link to="/login">Login</Link>
+          </li>
         </ul>
       </div>
     </div>

@@ -10,15 +10,17 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
 const AppLayout = () => {
         
   return (
-        <Provider store={appStore}>
+  <Provider store={appStore}>
     <div className="layout">
       <Header />
       <Outlet />
     </div>
-    </Provider>
+  </Provider>
   );
 };
 
@@ -46,6 +48,14 @@ const appRouter = createBrowserRouter([
       {
         path:'/cart',
         element:<Cart />
+      },
+      {
+        path:'/login',
+        element:<Login />
+      },
+      {
+        path:'/signup',
+        element:<Signup />
       }
     ],
     errorElement: <Error />,
