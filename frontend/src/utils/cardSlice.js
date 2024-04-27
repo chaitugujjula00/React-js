@@ -7,6 +7,7 @@ const cardSlice =createSlice({
         },
         reducers:{
                 addItem:(state, action)=>{
+                        // console.log(state.items.find(action.payload)==state.items.end())
                         state.items.push(action.payload);
                 },
                 removeItem:(state, action)=>{

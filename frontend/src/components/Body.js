@@ -4,7 +4,7 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import {useState, useEffect} from "react";
 import useOnlineStatus from "./useOnlineStatus";
-const Body = () =>{
+const Body = (user) =>{
     const [listofrestaurants,setlistofrestaurants] = useState([]);
     const [searchText,setsearchText] = useState("");
     const [filteredrestaurants,setfilteredrestaurants] = useState([]);
@@ -28,7 +28,7 @@ const Body = () =>{
                 <Shimmer />
             )
         }
-        
+        // console.log(user.user.email)
 
         if(OnlineStatus==false){
                 return(
@@ -37,6 +37,7 @@ const Body = () =>{
         }
     return(
         <div className="body">
+            <div>{user.user.email}</div>
             <div className="m-4 flex items-center">
                 <div className="m-4 flex ">
                     <input type="text" className="m-4 p-2 border border-solid border-black rounded-lg" value={searchText} onChange={(e)=>{

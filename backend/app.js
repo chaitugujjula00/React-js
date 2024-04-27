@@ -9,15 +9,25 @@ app.use(cors())
 
 const user=require('./models/User');
 
-mongoose.connect('mongodb+srv://loki:reactjs@react-js.z8jgbau.mongodb.net/?retryWrites=true&w=majority&appName=react-js').then(()=>{
+mongoose.connect('mongodb+srv://loki:reactjs@react-js.z8jgbau.mongodb.net/react-js?retryWrites=true&w=majority&appName=react-js').then(()=>{
     console.log('connected');
 }).catch((e)=>{
     console.log('error'+e);
 })
 
 
-app.get('/login',cors(),(req,res)=>{
-    console.log('tes');
+app.post('/login',cors(),async (req,res)=>{
+    const {email,password}=req.body;
+    
+    const presentUser = await user.findOne({email:email})
+    // console.log(presentUser)
+    if(!presentUser){res.status(200).send({message:"No user present"})}
+    else{
+        if(presentUser.password===password){
+            console.log(presentUser)
+            res.status(202).send({user:presentUser})}
+        else{res.status(200).send({message:"Incorrect password"})}
+    }
     // res.render("helllo")
 })
 

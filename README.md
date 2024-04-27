@@ -1,1 +1,1 @@
-npm i express monodb mongoose axios cors
+npm i express mongodb mongoose axios cors
