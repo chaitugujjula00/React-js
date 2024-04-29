@@ -12,8 +12,10 @@ import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import Account from "./components/Account";
 const AppLayout = () => {
         const [user,setUser]=useState(null)
+        console.log("uigkjb")
   return (
   <BrowserRouter>
   <Provider store={appStore}>
@@ -29,6 +31,7 @@ const AppLayout = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/:userName" element={<Account user={user}/>} />
         <Route path="*" element={<Error />} />
       </Routes>
     </div>
@@ -37,42 +40,5 @@ const AppLayout = () => {
   );
 };
 
-// const appRouter = createBrowserRouter([
-//   {
-
-//     element: <AppLayout />,
-//     children: [
-//       {
-//         path: "/",
-//         element: <Body />,
-//       },
-//       {
-//         path: "/about",
-//         element: <About />,
-//       },
-//       {
-//         path: "/contact",
-//         element: <Contact />,
-//       },
-//       {
-//         path:'/restuarants/:resId',
-//         element:<RestuarantMenu />
-//       },
-//       {
-//         path:'/cart',
-//         element:<Cart />
-//       },
-//       {
-//         path:'/login',
-//         element:<Login />
-//       },
-//       {
-//         path:'/signup',
-//         element:<Signup />
-//       }
-//     ],
-//     errorElement: <Error />,
-//   },
-// ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<AppLayout />);

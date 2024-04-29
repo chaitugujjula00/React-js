@@ -43,7 +43,7 @@ const remove =()=>{
             </svg>
         </div>
         <div class="dropdown-menu bg-white border rounded shadow-md p-2 w-32">
-            <a class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Account</a>
+            <a class="block px-4 py-2 text-gray-800 hover:bg-gray-200"><Link to={'/'+user.userName}>Account</Link></a>
             <a class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Orders</a>
             <a class="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={remove}>Sign Out</a>
         </div>
