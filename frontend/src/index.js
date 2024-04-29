@@ -31,7 +31,7 @@ const AppLayout = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/:userName" element={<Account user={user}/>} />
+        <Route path="/:userName/*" element={<Account user={user}/>} />
         <Route path="*" element={<Error />} />
       </Routes>
     </div>

@@ -13,11 +13,11 @@ const remove =()=>{
   setUser(null)
 }
   return (
-    <div className="flex justify-between bg-pink-200 shadow-lg">
-      <div className="logo-container">
-        <img className="w-52" src={LOGO_URL}></img>
+    <div className="flex justify-between h-24 bg-pink-400 shadow-xl rounded-b-[30px] border-x-8">
+      <div className=" logo-container overflow-hidden">
+        <img className=" py-2 ml-20 h-24 w-24 rounded-full " src={LOGO_URL}></img>
       </div>
-      <div className="flex p-4 m-4 items-center">
+      <div className="flex p-4 m-4 text-lg items-center">
         <ul className="flex">
           <li className="m-4 hover:cursor-pointer">onlineStatus: {onlineStatus ? "yes" : "no"}</li>
           <li className="m-4 hover:cursor-pointer">
@@ -35,7 +35,7 @@ const remove =()=>{
           { user === null ? (<li className="m-4 hover:cursor-pointer">
             <Link to="/login">Login</Link>
           </li>):(<li className="m-4 hover:cursor-pointer">
-          <div class="dropdown text-gray-700">
+          <div class="dropdown">
         <div class="flex items-center cursor-pointer">
             <span class="mr-1">{user.userName}</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 20 20" fill="currentColor">
@@ -44,8 +44,8 @@ const remove =()=>{
         </div>
         <div class="dropdown-menu bg-white border rounded shadow-md p-2 w-32">
             <a class="block px-4 py-2 text-gray-800 hover:bg-gray-200"><Link to={'/'+user.userName}>Account</Link></a>
-            <a class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Orders</a>
-            <a class="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={remove}>Sign Out</a>
+            <a class="block px-4 py-2 text-gray-800 hover:bg-gray-200"><Link to={'/'+user.userName+'/orders'}>Orders</Link></a>
+            <a class="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={remove}><Link to={'/login'}>Sign Out</Link></a>
         </div>
     </div>
           </li>)}
