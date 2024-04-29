@@ -9,7 +9,10 @@ const Login = ({setUser}) => {
   const navigate=useNavigate();
   const submit=(e)=>{
     e.preventDefault()
-
+    if(email.trim()=='' || password.trim()==''){
+      setMessage("Space is can't be a input")
+      return;
+    }
     axios.post("http://localhost:3000/login",{
       email,password
     }).then((res)=>{
@@ -51,8 +54,9 @@ const Login = ({setUser}) => {
                   </div> */}
                   <button type="submit" onClick={submit} className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 border-2 border-gray-600 font-medium rounded-lg text-base px-5 py-2.5 text-center hover:border-2 hover:border-pink-500 hover:bg-pink-400">Sign in</button>
                   {message.length > 0 
-              && 
-              <h2 className='text-lg text-white bg-red-500 px-4 py-2 rounded-xl'>{message}</h2>}
+                  && 
+                  <h2 className='text-lg text-white bg-red-500 px-4 py-2 rounded-xl'>{message}</h2>
+                  }
                   <p className="text-sm font-light text-gray-800 ">
                       Don’t have an account yet? <a href="#" className="font-medium text-gray-800 hover:underline "><Link to='/signup'>Sign up</Link></a>
                   </p>

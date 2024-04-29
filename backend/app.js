@@ -31,13 +31,17 @@ app.post('/login',cors(),async (req,res)=>{
     // res.render("helllo")
 })
 
+
 app.post('/signup',async(req,res)=>{
     const {email,userName,password}=req.body;
+    const presentUser = await user.findOne({email:email})
+    if(presentUser){ res.status(200).send({message:"user already exists with email"})}
     const newUser = new user();
     newUser.email=email;
     newUser.userName=userName;
     newUser.password=password;
     const savedUser = await newUser.save();
+    res.status(202);
     res.json("hello");
 })
 
