@@ -58,7 +58,7 @@ const Login = ({setUser}) => {
                   <h2 className='text-lg text-white bg-red-500 px-4 py-2 rounded-xl'>{message}</h2>
                   }
                   <p className="text-sm font-light text-gray-800 ">
-                      Don’t have an account yet? <a href="#" className="font-medium text-gray-800 hover:underline "><Link to='/signup'>Sign up</Link></a>
+                      Don’t have an account yet? <a className="font-medium text-gray-800 hover:underline "><Link to='/signup'>Sign up</Link></a>
                   </p>
               </form>
               

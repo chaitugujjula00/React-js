@@ -1,9 +1,9 @@
-import FoodCard,{withPromotedlabel}from "./FoodCard";
+import FoodCard,{withPromotedlabel}from "../components/FoodCard";
 import resList from "../utils/mockdata";
-import Shimmer from "./Shimmer";
+import Shimmer from "../components/Shimmer";
 import { Link } from "react-router-dom";
 import {useState, useEffect} from "react";
-import useOnlineStatus from "./useOnlineStatus";
+import useOnlineStatus from "../components/useOnlineStatus";
 const Body = (user) =>{
     const [listofrestaurants,setlistofrestaurants] = useState([]);
     const [searchText,setsearchText] = useState("");
@@ -43,17 +43,17 @@ const Body = (user) =>{
                     <input type="text" className="m-4 p-2 border border-solid border-black rounded-lg" value={searchText} onChange={(e)=>{
                         setsearchText(e.target.value);
                     }}/>
-                    <button className="px-4 m-4 bg-green-300 border border-solid border-black rounded-lg" onClick={()=>{
+                    <button className="px-4 m-4 bg-red-100 hover:bg-red-300 border border-solid border-black rounded-lg" onClick={()=>{
                         const searchedList = listofrestaurants.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                         setfilteredrestaurants(searchedList);
                     }}> Search</button>
                 </div>
-                <button className="px-4 py-2 m-4 bg-green-300 border border-solid border-black rounded-lg" onClick={()=>{
-                    const filteredList = listofrestaurants.filter((res)=>res.info.avgRating>4);
+                <button className="px-4 py-2 m-4 bg-red-100 hover:bg-red-300 border border-solid border-black rounded-lg" onClick={()=>{
+                    const filteredList = listofrestaurants.filter((res)=>res.info.avgRating>=4.5);
                     setfilteredrestaurants(filteredList);
                 }}
                 >Top rated restaurants</button>
-                <button className="px-4 py-2 m-4 bg-green-300 border border-solid border-black rounded-lg" onClick={()=>{
+                <button className="px-4 py-2 m-4 bg-red-100 hover:bg-red-300 border border-solid border-black rounded-lg" onClick={()=>{
                     const filteredList = listofrestaurants.filter((res)=>res.info.sla.deliveryTime<30);
                     setfilteredrestaurants(filteredList);
                 }}
